@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus SnackPass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Campus SnackPass</p>
+          <h1>Fast snacks, zero lines.</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="themeToggle" class="ghost-btn">🌙 Dark Mode</button>
+          <button id="guestBtn" class="ghost-btn">Browse as Guest</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-card">
+          <div>
+            <p class="pill">Smart campus ordering</p>
+            <h2>Grab your favourite bites before the next class.</h2>
+            <p>
+              Order ahead, skip the queue, and earn rewards while your canteen prepares your meal.
+            </p>
+            <div class="hero-actions">
+              <a href="#menu" class="primary-btn">Explore Menu</a>
+              <a href="#orders" class="secondary-btn">View Orders</a>
+            </div>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong id="metricOrders">0</strong>
+              <span>Orders served</span>
+            </div>
+            <div>
+              <strong id="metricQueue">12</strong>
+              <span>Queue ahead</span>
+            </div>
+            <div>
+              <strong>4.9★</strong>
+              <span>Campus rating</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="auth-grid">
+          <article class="card" id="authCard">
+            <div class="card-head">
+              <h3>Student access</h3>
+              <p id="authStatus">Sign in to unlock wallet, history and perks.</p>
+            </div>
+            <form id="authForm" class="stack">
+              <input id="nameInput" placeholder="Full name" required />
+              <input id="rollInput" placeholder="Roll number" required />
+              <input id="emailInput" type="email" placeholder="College email" required />
+              <button class="primary-btn" type="submit">Create account</button>
+            </form>
+            <div id="profilePanel" class="profile-panel hidden"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Live canteen pulse</h3>
+              <p>Peak hours, crowd levels and pickup windows.</p>
+            </div>
+            <div class="status-list">
+              <div class="status-row">
+                <span>North Canteen</span>
+                <span class="tag high">High rush</span>
+              </div>
+              <div class="status-row">
+                <span>Library Cafe</span>
+                <span class="tag medium">Medium</span>
+              </div>
+              <div class="status-row">
+                <span>Hostel Hub</span>
+                <span class="tag low">Low rush</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="menu" class="menu-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Menu</p>
+              <h3>Choose your next bite</h3>
+            </div>
+            <div class="search-row">
+              <input id="searchInput" placeholder="Search snacks or drinks" />
+            </div>
+          </div>
+
+          <div class="filters-row">
+            <select id="categoryFilter">
+              <option value="All">All Categories</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Beverages">Beverages</option>
+              <option value="Meals">Meals</option>
+              <option value="Combos">Combos</option>
+            </select>
+            <label><input type="checkbox" id="vegOnly" /> Veg only</label>
+            <label><input type="checkbox" id="spicyOnly" /> Spicy</label>
+            <label><input type="checkbox" id="bestsellerOnly" /> Bestsellers</label>
+            <label><input type="checkbox" id="availableOnly" checked /> Available now</label>
+          </div>
+
+          <div id="menuGrid" class="menu-grid"></div>
+        </section>
+
+        <section class="content-grid">
+          <article class="card cart-card">
+            <div class="card-head">
+              <h3>Your cart</h3>
+              <p>Flexible quantities and quick checkout.</p>
+            </div>
+            <div id="cartItems" class="cart-list"></div>
+            <div id="cartSummary" class="cart-summary"></div>
+          </article>
+
+          <article class="card checkout-card">
+            <div class="card-head">
+              <h3>Checkout</h3>
+              <p>Pickup soon, pay your way.</p>
+            </div>
+            <div class="stack">
+              <label>
+                <span>Order type</span>
+                <select id="scheduleType">
+                  <option value="now">Order now</option>
+                  <option value="later">Pre-order for later</option>
+                </select>
+              </label>
+              <label>
+                <span>Pickup slot</span>
+                <select id="pickupSlot">
+                  <option>12:30 PM</option>
+                  <option>1:00 PM</option>
+                  <option>4:30 PM</option>
+                  <option>6:00 PM</option>
+                </select>
+              </label>
+              <label>
+                <span>Payment method</span>
+                <select id="paymentMethod">
+                  <option value="wallet">Wallet</option>
+                  <option value="upi">UPI mock</option>
+                  <option value="cash">Cash on pickup</option>
+                </select>
+              </label>
+              <label>
+                <span>Promo code</span>
+                <input id="couponInput" placeholder="e.g. SNACK10" />
+              </label>
+              <button id="checkoutBtn" class="primary-btn">Place order</button>
+            </div>
+          </article>
+        </section>
+
+        <section id="orders" class="content-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3>Order tracking</h3>
+              <p>Know exactly when your snack will be ready.</p>
+            </div>
+            <div id="orderTracking" class="order-tracking"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Recommendations</h3>
+              <p>Often paired with what you already picked.</p>
+            </div>
+            <div id="recommendations" class="recommendations"></div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="card">
+            <div class="card-head">
+              <h3>Vendor dashboard</h3>
+              <p>Manage the queue like a pro.</p>
+            </div>
+            <div id="vendorDashboard" class="vendor-dashboard"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3>Order history</h3>
+              <p>Reorder in one tap.</p>
+            </div>
+            <div id="orderHistory" class="order-history"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
