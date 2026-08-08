@@ -14,16 +14,28 @@ Campus Snacks Pass is a minimal client-side application built with plain HTML, C
 
 ## Usage
 
-Open `index.html` in a modern browser. For a local server (recommended), run a simple HTTP server from the project folder:
+Open `index.html` in a modern browser. For a local server (recommended), run a simple HTTP server from the project folder, for example:
 
-Live link : https://magenta-manatee-7051c5.netlify.app/
+```bash
+# Python 3
+python -m http.server 8000
 
-Or use the Live Server extension in VS Code.
+# or using Node (http-server)
+npx http-server . -p 8000
+```
+
+Then visit `http://localhost:8000` in your browser.
 
 ## Development
 
 - No build step or dependencies are required — this is pure front-end code.
 - Edit the files listed above and refresh the browser to see changes.
+
+### New in this commit
+
+- Added 12 new menu items and integrated local images stored in the `snackpics/` folder.
+- Images are referenced using relative paths (e.g. `./snackpics/coldcoffee.jpg`) so they load locally — no external URLs used.
+- Menu card images use `object-fit: cover` to preserve layout.
 
 ## Contributing
 

@@ -137,6 +137,14 @@ input, select {
   padding: 14px;
   background: linear-gradient(135deg, var(--surface), var(--surface-2));
 }
+.menu-card .menu-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: block;
+}
 .menu-card h4 { margin-bottom: 6px; }
 .menu-meta { display: flex; justify-content: space-between; margin: 8px 0; color: var(--muted); font-size: 0.92rem; }
 .cart-list, .recommendations, .order-history, .vendor-dashboard, .order-tracking { display: grid; gap: 10px; }

@@ -1,10 +1,21 @@
 const menuItems = [
-  { id: 1, name: 'Crispy Samosa', category: 'Snacks', price: 35, veg: true, spicy: false, bestseller: true, available: true, description: 'Golden pastry filled with spiced potatoes.', calories: 220 },
-  { id: 2, name: 'Masala Maggi', category: 'Meals', price: 70, veg: true, spicy: true, bestseller: true, available: true, description: 'Comfort noodles with crunchy veggies.', calories: 310 },
-  { id: 3, name: 'Classic Cold Coffee', category: 'Beverages', price: 60, veg: true, spicy: false, bestseller: false, available: true, description: 'Chilled coffee with caramel notes.', calories: 180 },
-  { id: 4, name: 'Paneer Wrap', category: 'Combos', price: 120, veg: true, spicy: false, bestseller: true, available: true, description: 'Stuffed wrap with fresh greens.', calories: 420 },
-  { id: 5, name: 'Chicken Puff', category: 'Snacks', price: 55, veg: false, spicy: true, bestseller: false, available: false, description: 'Flaky pastry with juicy chicken.', calories: 260 },
-  { id: 6, name: 'Mango Lassi', category: 'Beverages', price: 55, veg: true, spicy: false, bestseller: false, available: true, description: 'Sweet and creamy yogurt drink.', calories: 190 }
+  { id: 1, name: 'Crispy Samosa', category: 'Snacks', price: 35, veg: true, spicy: false, bestseller: true, available: true, description: 'Golden pastry filled with spiced potatoes.', calories: 220, image: './snackpics/crispysamosa.jpg' },
+  { id: 2, name: 'Masala Maggi', category: 'Meals', price: 70, veg: true, spicy: true, bestseller: true, available: true, description: 'Comfort noodles with crunchy veggies.', calories: 310, image: './snackpics/masalamaggie.jpg' },
+  { id: 3, name: 'Classic Cold Coffee', category: 'Beverages', price: 60, veg: true, spicy: false, bestseller: false, available: true, description: 'Chilled coffee with caramel notes.', calories: 180, image: './snackpics/coldcoffee.jpg' },
+  { id: 4, name: 'Paneer Wrap', category: 'Combos', price: 120, veg: true, spicy: false, bestseller: true, available: true, description: 'Stuffed wrap with fresh greens.', calories: 420, image: './snackpics/paneerwrap.jpeg' },
+  { id: 5, name: 'Chicken Puff', category: 'Snacks', price: 55, veg: false, spicy: true, bestseller: false, available: false, description: 'Flaky pastry with juicy chicken.', calories: 260, image: './snackpics/puff.jpg' },
+  { id: 6, name: 'Mango Lassi', category: 'Beverages', price: 55, veg: true, spicy: false, bestseller: false, available: true, description: 'Sweet and creamy yogurt drink.', calories: 190, image: './snackpics/mangolassi.jpg' },
+
+  // Newly added items requested
+  { id: 7, name: 'Cold Coffee', category: 'Beverages', price: 60, veg: true, spicy: false, bestseller: false, available: true, description: 'Classic chilled cold coffee.', calories: 180, image: './snackpics/coldcoffee.jpg' },
+  { id: 8, name: 'Tea', category: 'Beverages', price: 30, veg: true, spicy: false, bestseller: false, available: true, description: 'Hot brewed tea.', calories: 20, image: './snackpics/tea.jpg' },
+  { id: 9, name: 'French Fries', category: 'Snacks', price: 45, veg: true, spicy: true, bestseller: false, available: true, description: 'Crispy golden fries.', calories: 320, image: './snackpics/frenchfries.jpg' },
+  { id: 10, name: 'Creme Cheese Pasta', category: 'Meals', price: 140, veg: true, spicy: false, bestseller: false, available: true, description: 'Creamy cheese pasta.', calories: 540, image: './snackpics/creamcheesepasta.jpg' },
+  { id: 11, name: 'Panipuri', category: 'Snacks', price: 40, veg: true, spicy: true, bestseller: true, available: true, description: 'Crispy puris with tangy water.', calories: 150, image: './snackpics/panipuri.jpg' },
+  { id: 12, name: 'Paniyaram', category: 'Snacks', price: 50, veg: true, spicy: false, bestseller: false, available: true, description: 'Savory South Indian snack.', calories: 210, image: './snackpics/paniyaram.jpg' },
+  { id: 13, name: 'Pizza', category: 'Meals', price: 150, veg: false, spicy: false, bestseller: true, available: true, description: 'Cheesy pepperoni pizza.', calories: 700, image: './snackpics/pizza.jpg' },
+  { id: 14, name: 'Puff', category: 'Snacks', price: 55, veg: false, spicy: true, bestseller: false, available: true, description: 'Flaky stuffed puff.', calories: 260, image: './snackpics/puff.jpg' },
+  { id: 15, name: 'Red Sauce Pasta', category: 'Meals', price: 150, veg: true, spicy: false, bestseller: false, available: true, description: 'Pasta in tangy red sauce.', calories: 520, image: './snackpics/redsaucepasta.webp' }
 ];
 
 const state = {
@@ -64,6 +75,7 @@ function renderMenu() {
 
   els.menuGrid.innerHTML = filtered.map(item => `
     <article class="menu-card">
+      <img src="${item.image || ''}" alt="${item.name}" class="menu-img" />
       <div class="menu-meta">
         <strong>${item.category}</strong>
         <span>${item.available ? 'Live' : 'Sold out'}</span>
