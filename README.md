@@ -6,6 +6,8 @@ A tiny front-end web app for managing snack passes on campus.
 
 Campus Snacks Pass is a minimal client-side application built with plain HTML, CSS, and JavaScript. It provides a simple UI to issue and track snack passes for students or staff during campus events.
 
+Live link : https://magenta-manatee-7051c5.netlify.app/
+
 ## Files
 
 - [index.html](index.html) — App shell and UI
@@ -16,13 +18,7 @@ Campus Snacks Pass is a minimal client-side application built with plain HTML, C
 
 Open `index.html` in a modern browser. For a local server (recommended), run a simple HTTP server from the project folder, for example:
 
-```bash
-# Python 3
-python -m http.server 8000
 
-# or using Node (http-server)
-npx http-server . -p 8000
-```
 
 Then visit `http://localhost:8000` in your browser.
 
